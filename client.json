@@ -1,0 +1,13 @@
+{
+  "produtos": [
+    {
+      "id": 1,
+      "descrição": "Tênis Branco",
+      "marca": "Adidas",
+      "tamanho": "42",
+      "preço": "R$900,00",
+      "tipo": "Masculino"
+    }
+
+  ]
+}

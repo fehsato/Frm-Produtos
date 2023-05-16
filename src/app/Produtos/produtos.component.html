@@ -1,0 +1,60 @@
+<div class="row">
+  <div class="col-8 m-auto">
+
+
+    <form [formGroup]="formGroupClient">
+      <div class="mb-3">
+        <div class="display-6 text-center">
+            Cadastro De Produtos da Loja de Calçados
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="name" class="form-label">Descrição:</label>
+        <input type="text" formControlName="name" class="form-control" id="name" placeholder="Ex: Chinelo Brilhante">
+      </div>
+        <div class="mb-3">
+          <label for="marca" class="form-label">Marca:</label>
+          <input type="text" formControlName="marca" class="form-control" id="marca" placeholder="Ex: Havaianas">
+        </div>
+        <div class="mb-3">
+          <label for="tamanho" class="form-label">Tamanho:</label>
+          <input type="text" formControlName="tamanho" class="form-control" id="tamanho" placeholder="Ex: 36">
+        </div>
+        <div class="mb-3">
+          <label for="preço" class="form-label">Preço:</label>
+          <input type="text" formControlName="preço" class="form-control" id="preço" placeholder="Ex: R$39,99">
+        </div>
+        <div class="mb-3">
+          <label for="tipo" class="form-label">Tipo:</label>
+          <input type="text" formControlName="tipo" class="form-control" id="tipo" placeholder="Ex: Feminino ou Masculino">
+        </div>
+        <div class="mb-3 d-flex justify-content-end">
+          <button class="btn btn-primary" (click)="save()">Salvar</button>
+          <button class="btn btn-primary" (click)="clean()">Limpar</button>
+        </div>
+    </form>
+  </div>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Descrição</th>
+      <th scope="col">Marca</th>
+      <th scope="col">Tamanho</th>
+      <th scope="col">Preço</th>
+      <th scope="col">Tipo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let client of clients">
+      <th scope="row">{{client.id}}</th>
+      <td>{{client.name}}</td>
+      <td>{{client.email}}</td>
+      <td>
+        <button class="btn btn-primary me-1" (click)="edit(client)">Editar</button>
+        <button class="btn btn-primary" (click)="remove(client)">Excluir</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
